@@ -164,6 +164,7 @@ public class player : MonoBehaviour
     {
         if (collision.gameObject.tag == "enemy") {
             hp -= amount;
+            hpText.text = "HP: " + hp;
             if (hp <= 0) {
                 die();
             }
