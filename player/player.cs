@@ -9,6 +9,8 @@ public class player : MonoBehaviour
 
     //movement
     public Vector2 lastDirection;
+    //this is for gun angle. it's gonna be 8directional but idc at this point we can fix it in post
+    public Vector2 shootDirection;
 
     //bullets
     public bool shooting = false;
@@ -76,17 +78,22 @@ public class player : MonoBehaviour
     public void shoot(InputAction.CallbackContext ev) {
         if (ev.performed) {
             shooting = true;
+            shootDirection = ev.ReadValue<Vector2>();
         }
         if (ev.canceled) {
+            Debug.Log("Canceled");
             shooting = false;
+            shootDirection = Vector2.zero;
         }
     }
 
     public IEnumerator Shoot() {
-        if (shooting) {
+        if (shooting && shootDirection.magnitude != 0) {
             //spawn bullet here
+            transform.Rotate(0, 0, shootDirection.magnitude * 90);
+            Instantiate(bullet, transform.position, Quaternion.identity);
         }
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.2f);
         StartCoroutine(Shoot());
     }
 
