@@ -23,7 +23,7 @@ public class bullet : MonoBehaviour
     void Update()
     {
         myRig.velocity = rot * speed;
-        if (Math.Abs((cam.transform.position - gameObject.transform.position).magnitude) > 15)
+        if (Math.Abs((p.gameObject.transform.position - gameObject.transform.position).magnitude) > p.range)
         {
             Destroy(gameObject);
         }
