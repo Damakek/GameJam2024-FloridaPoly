@@ -38,7 +38,7 @@ public class player : MonoBehaviour
     public int amount;
 
     Rigidbody myRig;
-
+    public Animator myAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +47,7 @@ public class player : MonoBehaviour
         maxhp = hp;
 
         myRig = GetComponent<Rigidbody>();
+        myAnimator = GetComponent<Animator>();
 
         //set all of this
         hpText.text = "HP: " + hp;
@@ -61,6 +62,13 @@ public class player : MonoBehaviour
     {
         Vector3 targetV = new Vector3(lastDirection.x, lastDirection.y, 0).normalized * speed;
         myRig.velocity = Vector3.Lerp(myRig.velocity, targetV, 5);
+        if (myRig.velocity.magnitude > 0)
+        {
+            myAnimator.SetFloat("speed", 1f);
+        }
+        else {
+            myAnimator.SetFloat("speed", 0);
+        }
     }
 
     public void move(InputAction.CallbackContext ev)
@@ -68,10 +76,26 @@ public class player : MonoBehaviour
         if (ev.performed)
         {
             lastDirection = ev.ReadValue<Vector2>();
+            if (lastDirection.x == 0 && lastDirection.y == 1)
+            { //up
+                myAnimator.SetInteger("direction", 3);
+            }
+            else if (lastDirection.x == 0 && lastDirection.y == 0)
+            {//down
+                myAnimator.SetInteger("direction", 1);
+            }
+            else if (lastDirection.x == 1 && lastDirection.y == 0)
+            {//left
+                myAnimator.SetInteger("direction", 2);
+            }
+            else {
+                myAnimator.SetInteger("direction", 4);
+            }
         }
         if (ev.canceled)
-        {// if cancelled, set last direction to 0 and this saves on computation
+        {
             lastDirection = Vector2.zero;
+            myAnimator.SetInteger("direction", 0);
         }
     }
 
@@ -90,7 +114,6 @@ public class player : MonoBehaviour
     public IEnumerator Shoot() {
         if (shooting && shootDirection.magnitude != 0) {
             //spawn bullet here
-            transform.Rotate(0, 0, shootDirection.magnitude * 90);
             Instantiate(bullet, transform.position, Quaternion.identity);
         }
         yield return new WaitForSeconds(.2f);

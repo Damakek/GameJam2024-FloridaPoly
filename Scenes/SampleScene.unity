@@ -227,10 +227,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Square
       objectReference: {fileID: 0}
-    - target: {fileID: 5607287458697236512, guid: 9c93308910f20f749983f797a6e5835d, type: 3}
-      propertyPath: amount
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8353407432892035342, guid: 9c93308910f20f749983f797a6e5835d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.7927923
@@ -290,7 +286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4489516195665806864, guid: 8be49a0800930834aaff774fa11ace82, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8756145
+      value: -11.08
       objectReference: {fileID: 0}
     - target: {fileID: 4489516195665806864, guid: 8be49a0800930834aaff774fa11ace82, type: 3}
       propertyPath: m_LocalPosition.y
