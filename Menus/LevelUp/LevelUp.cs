@@ -12,44 +12,27 @@ public class LevelUp : MonoBehaviour
     public GameObject drugB;
     public GameObject drugC;
 
-    public Button drugA_B;
-    public Button drugB_B;
-    public Button drugC_B;
-
-
-    public TextMeshProUGUI A_info;
-    public TextMeshProUGUI B_info;
-    public TextMeshProUGUI C_info;
-
-
-
     public void drug_1()
     {
-        //instantiate drug in worldspace
+        GameObject temp = GameObject.Instantiate(drugA, this.gameObject.transform.position, transform.rotation);
         closeWindow();
     }
 
     public void drug_2()
     {
-        //instantiate drug in worldspace
+        GameObject temp = GameObject.Instantiate(drugB, this.gameObject.transform.position, transform.rotation);
         closeWindow();
 
     }
 
     public void drug_3()
     {
-        //instantiate here
+        GameObject temp = GameObject.Instantiate(drugC, this.gameObject.transform.position, transform.rotation);
         closeWindow();
     }
 
     public void closeWindow()
     {
-        Destroy(this.gameObject);
-    }
-
-    public void Start()
-    {
-        //something like this to set the image for drug on the button
-       //drugA_B.image.sprite = drugA.gameObject.GetComponent<>
+        Destroy(gameObject);
     }
 }
