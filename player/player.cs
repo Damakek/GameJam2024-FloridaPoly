@@ -88,9 +88,6 @@ public class player : MonoBehaviour
             {//right
                 myAnimator.SetInteger("direction", 2);
             }
-            else if (lastDirection.x == 0 && lastDirection.y == -1) {//down
-                myAnimator.SetInteger("direction", 1    );
-            }
             else
             {//left
                 myAnimator.SetInteger("direction", 4);
