@@ -69,6 +69,8 @@ public class player : MonoBehaviour
         else {
             myAnimator.SetFloat("speed", 0);
         }
+        myAnimator.SetFloat("horizontal", lastDirection.x);
+        myAnimator.SetFloat("vertical", lastDirection.y);
     }
 
     public void move(InputAction.CallbackContext ev)
@@ -76,27 +78,11 @@ public class player : MonoBehaviour
         if (ev.performed)
         {
             lastDirection = ev.ReadValue<Vector2>();
-            if (lastDirection.x == 0 && lastDirection.y == 1)
-            { //up
-                myAnimator.SetInteger("direction", 3);
-            }
-            else if ((lastDirection.x == 0 && lastDirection.y == 0) || (lastDirection.x == 0 && lastDirection.y == -1))
-            {//down
-                myAnimator.SetInteger("direction", 1);
-            }
-            else if (lastDirection.x == 1 && lastDirection.y == 0)
-            {//right
-                myAnimator.SetInteger("direction", 2);
-            }
-            else
-            {//left
-                myAnimator.SetInteger("direction", 4);
-            }
+            
         }
         if (ev.canceled)
         {
             lastDirection = Vector2.zero;
-            myAnimator.SetInteger("direction", 0);
         }
     }
 
