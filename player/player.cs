@@ -99,8 +99,19 @@ public class player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "enemy")
+        {
+            Debug.Log("Hit by an enemy!");
+            hp -= amount;
+            hpText.text = "HP: " + hp;
+            if (hp <= 0)
+            {
+                die();
+            }
+        }
+
         if (other.gameObject.tag == "drug") {
-            Debug.Log("Drug located");
+            //Debug.Log("Drug located");
             string plustemp = other.GetComponent<drug>().plus;
             string minustemp = other.GetComponent<drug>().minus;
 
@@ -160,19 +171,9 @@ public class player : MonoBehaviour
         }
     }
 
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "enemy") {
-            hp -= amount;
-            hpText.text = "HP: " + hp;
-            if (hp <= 0) {
-                die();
-            }
-        }
-    }
-
     public void die() {
         //lmao freal???
         Debug.Log("Player has died!");
+        Destroy(gameObject);
     }
 }

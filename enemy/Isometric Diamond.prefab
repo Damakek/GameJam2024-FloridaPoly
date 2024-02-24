@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5945397867284621846
+--- !u!1 &2769235616625171103
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9032769539224221684}
-  - component: {fileID: 824679826620190540}
-  - component: {fileID: 8976130566653297984}
-  - component: {fileID: 6908057126016907011}
-  - component: {fileID: 8957529568792546339}
+  - component: {fileID: 2192619723975441083}
+  - component: {fileID: 5422504322702866534}
+  - component: {fileID: 6567630327084074689}
+  - component: {fileID: 1924542882101819637}
+  - component: {fileID: 481898718221568397}
   m_Layer: 0
-  m_Name: Circle
-  m_TagString: bullet
+  m_Name: Isometric Diamond
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9032769539224221684
+--- !u!4 &2192619723975441083
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5945397867284621846}
+  m_GameObject: {fileID: 2769235616625171103}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.43, y: -0.91914713, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: -3.1751552, y: -3.2868178, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &824679826620190540
+--- !u!212 &5422504322702866534
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5945397867284621846}
+  m_GameObject: {fileID: 2769235616625171103}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -76,24 +76,24 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!54 &8976130566653297984
+--- !u!54 &6567630327084074689
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5945397867284621846}
+  m_GameObject: {fileID: 2769235616625171103}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -114,13 +114,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &6908057126016907011
-SphereCollider:
+--- !u!65 &1924542882101819637
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5945397867284621846}
+  m_GameObject: {fileID: 2769235616625171103}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -133,22 +133,21 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Size: {x: 1, y: 0.5, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8957529568792546339
+--- !u!114 &481898718221568397
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5945397867284621846}
+  m_GameObject: {fileID: 2769235616625171103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f28af86b46ac9245872b6b30d0f06ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 1eb11acf01ebac34c844070345e216b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  myRig: {fileID: 0}
-  cam: {fileID: 0}
-  rot: {x: 0, y: 0, z: 0}
-  p: {fileID: 0}
+  hp: 0
+  speed: 3
+  attack: 0
+  player: {fileID: 0}
