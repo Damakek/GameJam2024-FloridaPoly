@@ -27,6 +27,9 @@ public class player : MonoBehaviour
     public int defense;
     public float speed;
     public int range;
+    public int exp;
+    public double expThreshold;
+    public int level = 1;
 
     //things to display said stats in
     public TextMeshProUGUI hpText;
@@ -34,6 +37,7 @@ public class player : MonoBehaviour
     public TextMeshProUGUI attackText;
     public TextMeshProUGUI rangeText;
     public TextMeshProUGUI moveText;
+    public TextMeshProUGUI levelText;
 
     public int amount;
 
@@ -55,6 +59,7 @@ public class player : MonoBehaviour
         defText.text = "DEF: " + defense;
         rangeText.text = "RNG: " + range;
         moveText.text = "SPD: " + speed;
+
     }
 
     // Update is called once per frame
@@ -185,5 +190,19 @@ public class player : MonoBehaviour
         //lmao freal???
         Debug.Log("Player has died!");
         Destroy(gameObject);
+    }
+
+    public void levelUp() {
+        level++;
+        levelText.text = "LEVEL " + level;
+        exp -= (int)expThreshold;
+        expThreshold *= 1.2;
+    }
+
+    public void defeatEnemy(int amount) {
+        exp += amount;
+        if (exp >= expThreshold) {
+            levelUp();
+        }
     }
 }

@@ -10,12 +10,15 @@ public class enemy : MonoBehaviour
     public int attack;
 
     public GameObject player;
+    public player p;
+    public int amount;
     Rigidbody myRig;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");   
+        p = player.GetComponent<player>();
         myRig = GetComponent<Rigidbody>();
     }
 
@@ -41,6 +44,7 @@ public class enemy : MonoBehaviour
         {
             hp--;
             if (hp <= 0) {
+                p.defeatEnemy(amount);
                 Destroy(gameObject);
             }
         }

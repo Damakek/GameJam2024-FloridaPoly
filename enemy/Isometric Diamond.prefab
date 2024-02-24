@@ -151,3 +151,5 @@ MonoBehaviour:
   speed: 3
   attack: 0
   player: {fileID: 0}
+  p: {fileID: 0}
+  amount: 1
