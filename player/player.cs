@@ -80,15 +80,19 @@ public class player : MonoBehaviour
             { //up
                 myAnimator.SetInteger("direction", 3);
             }
-            else if (lastDirection.x == 0 && lastDirection.y == 0)
+            else if ((lastDirection.x == 0 && lastDirection.y == 0) || (lastDirection.x == 0 && lastDirection.y == -1))
             {//down
                 myAnimator.SetInteger("direction", 1);
             }
             else if (lastDirection.x == 1 && lastDirection.y == 0)
-            {//left
+            {//right
                 myAnimator.SetInteger("direction", 2);
             }
-            else {
+            else if (lastDirection.x == 0 && lastDirection.y == -1) {//down
+                myAnimator.SetInteger("direction", 1    );
+            }
+            else
+            {//left
                 myAnimator.SetInteger("direction", 4);
             }
         }
