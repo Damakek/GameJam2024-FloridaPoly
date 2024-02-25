@@ -227,9 +227,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5687a68d5043d284a9b8a1f58f88f456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drugA: {fileID: 4190065976328392276, guid: 36c56b3abcc83184cb29e8afb43086bb, type: 3}
-  drugB: {fileID: 702210908109901941, guid: 616e16049f3b96544a690530583d04f5, type: 3}
-  drugC: {fileID: 6200364036169221230, guid: 0802f1a1adf02614f8f57d921355f935, type: 3}
+  drugs:
+  - {fileID: 4190065976328392276, guid: 36c56b3abcc83184cb29e8afb43086bb, type: 3}
+  - {fileID: 4215022028813414135, guid: c28e414cbdac37a448790e5cdab19665, type: 3}
+  - {fileID: 702210908109901941, guid: 616e16049f3b96544a690530583d04f5, type: 3}
+  - {fileID: 6200364036169221230, guid: 0802f1a1adf02614f8f57d921355f935, type: 3}
+  - {fileID: 3328017198772395259, guid: cd1148d48a59e8a4b89b3caef49f3071, type: 3}
+  - {fileID: 8421761976170781213, guid: ac945b6195c34f44f8a7059bba0ead02, type: 3}
+  drugA: {fileID: 0}
+  drugB: {fileID: 0}
+  drugC: {fileID: 0}
+  drugA_description: {fileID: 2521569111171075736}
+  drugB_description: {fileID: 1795424661832540103}
+  drugC_description: {fileID: 3859018990285360243}
   levelUpScreen: {fileID: 3565888269013029516}
   player: {fileID: 0}
 --- !u!1 &3771908050204581742
@@ -310,9 +320,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'HP+
-
-    ATK-'
+  m_Text: 
 --- !u!1 &3921254456987237312
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,9 +742,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'ATK+
-
-    DEF-'
+  m_Text: 
 --- !u!1 &8657681557297651062
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,6 +821,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'RANGE+
-
-    SPD-'
+  m_Text: 
