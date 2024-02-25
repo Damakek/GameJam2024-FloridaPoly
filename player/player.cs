@@ -6,6 +6,8 @@ using TMPro;
 
 public class player : MonoBehaviour
 {
+    //Audio
+    AudioManager audioManager;
 
     //movement
     public Vector2 lastDirection;
@@ -57,6 +59,7 @@ public class player : MonoBehaviour
 
         myRig = GetComponent<Rigidbody>();
         myAnimator = GetComponent<Animator>();
+        
 
         //set all of this
         hpText.text = "HP: " + hp;
@@ -65,6 +68,11 @@ public class player : MonoBehaviour
         rangeText.text = "RNG: " + range;
         moveText.text = "SPD: " + speed;
 
+    }
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -112,6 +120,7 @@ public class player : MonoBehaviour
         if (shooting && shootDirection.magnitude != 0 && hp > 0) {
             //spawn bullet here
             Instantiate(bullet, transform.position, Quaternion.identity);
+            audioManager.PlaySFX(audioManager.playerFire);
         }
         yield return new WaitForSeconds(.2f);
         StartCoroutine(Shoot());
@@ -121,6 +130,7 @@ public class player : MonoBehaviour
     {
         if (other.gameObject.tag == "enemy")
         {
+            audioManager.PlaySFX(audioManager.playerHit);
             hp -= amount - defense;
             hpText.text = "HP: " + hp;
             if (hp <= 0)
