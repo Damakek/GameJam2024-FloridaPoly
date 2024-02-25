@@ -140,11 +140,8 @@ public class player : MonoBehaviour
         }
 
         if (other.gameObject.tag == "drug") {
-            //Debug.Log("Drug located");
             string plustemp = other.GetComponent<drug>().plus;
             string minustemp = other.GetComponent<drug>().minus;
-
-            Debug.Log(plustemp + ", " + minustemp);
 
             switch (plustemp) {
                 case "hp":

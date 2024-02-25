@@ -34,7 +34,7 @@ public class LevelUp : MonoBehaviour
     }
 
     public void randomizeDrugs() {
-        Debug.Log(rand1 + ", " + rand2 + ", " + rand3);
+        //Debug.Log(rand1 + ", " + rand2 + ", " + rand3);
          rand1 = Random.Range(1, drugs.Count);
          rand2 = Random.Range(1, drugs.Count);
          rand3 = Random.Range(1, drugs.Count);
