@@ -14,15 +14,23 @@ public class enemy : MonoBehaviour
     public int amount;
     Rigidbody myRig;
 
+    AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         attack = (int)(Time.timeSinceLevelLoad/10) + 2;
         hp = (int)(Time.timeSinceLevelLoad / 20) + 1;
         Debug.Log(attack);
         player = GameObject.FindGameObjectWithTag("Player");   
         p = player.GetComponent<player>();
         myRig = GetComponent<Rigidbody>();
+    }
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -44,6 +52,7 @@ public class enemy : MonoBehaviour
     {
         if (other.gameObject.tag == "bullet")
         {
+            audioManager.PlaySFX(audioManager.enemyHit);
             hp--;
             if (hp <= 0) {
                 p.defeatEnemy(amount);
