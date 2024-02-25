@@ -210,6 +210,7 @@ public class player : MonoBehaviour
     public void levelUp() {
         menuUp = true;
         levelUpScreen.SetActive(true);
+        levelUpScreen.GetComponent<LevelUp>().randomizeDrugs();
         Time.timeScale = 0;
         level++;
         levelText.text = "LEVEL " + level;
