@@ -42,6 +42,7 @@ public class LevelUp : MonoBehaviour
     public void closeWindow()
     {
         Time.timeScale = 1f;
+        player.GetComponent<player>().menuUp = false;
         levelUpScreen.SetActive(false);
     }
 }

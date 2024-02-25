@@ -17,6 +17,7 @@ public class LoseScreen : MonoBehaviour
     {
         Debug.Log("Retry");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<player>().menuUp = false;
         Time.timeScale = 1f;
     }
 

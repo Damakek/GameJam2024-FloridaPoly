@@ -42,6 +42,8 @@ public class player : MonoBehaviour
     public GameObject loseScreen;
     public GameObject levelUpScreen;
 
+    public bool menuUp = false;
+
     public int amount;
 
     Rigidbody myRig;
@@ -100,7 +102,7 @@ public class player : MonoBehaviour
             shootDirection = ev.ReadValue<Vector2>();
         }
         if (ev.canceled) {
-            Debug.Log("Canceled");
+            //Debug.Log("Canceled");
             shooting = false;
             shootDirection = Vector2.zero;
         }
@@ -119,7 +121,7 @@ public class player : MonoBehaviour
     {
         if (other.gameObject.tag == "enemy")
         {
-            hp -= amount;
+            hp -= amount - defense;
             hpText.text = "HP: " + hp;
             if (hp <= 0)
             {
@@ -190,12 +192,13 @@ public class player : MonoBehaviour
 
     public void die() {
         //lmao freal???
-        if(loseScreen != null)
+        menuUp = true;
         loseScreen.SetActive(true);
         Time.timeScale = 0;
     }
 
     public void levelUp() {
+        menuUp = true;
         levelUpScreen.SetActive(true);
         Time.timeScale = 0;
         level++;

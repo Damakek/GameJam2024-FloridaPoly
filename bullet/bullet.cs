@@ -22,7 +22,7 @@ public class bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (p == null)
+        if (p.menuUp)
         {
             Time.timeScale = 0; 
         }

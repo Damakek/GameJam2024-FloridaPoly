@@ -26,18 +26,15 @@ public class enemy : MonoBehaviour
     void Update()
     {
         //walk towards player - we can add a proximity by saying "hey if that's < threshold" or smth
-        if (player == null)
-        {
-            myRig.velocity = Vector3.zero;
-            Time.timeScale = 0;
-        }
-        else
+        if (!p.menuUp)
         {
             Vector3 playerPos = player.transform.position;
             Time.timeScale = 1f;
             transform.up = (gameObject.transform.position - playerPos).normalized;
             myRig.velocity = transform.up * speed * -1;
         }
+        else
+            Time.timeScale = 0;
     }
 
     private void OnTriggerEnter(Collider other)

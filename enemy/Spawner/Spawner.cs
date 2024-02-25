@@ -24,7 +24,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player == null)
+        if (player.GetComponent<player>().menuUp)
             Time.timeScale = 0;
         else
             Time.timeScale = 1f;
