@@ -627,6 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e026ca6da9560489d1bb9d4672a499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loseScreen: {fileID: 5693017737294198542}
 --- !u!1 &6352732231668119722
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,27 +12,36 @@ public class LevelUp : MonoBehaviour
     public GameObject drugB;
     public GameObject drugC;
 
+    public GameObject levelUpScreen;
+    public GameObject player;
+
+    private void Awake()
+    {
+        levelUpScreen.SetActive(false);
+    }
+
     public void drug_1()
     {
-        GameObject temp = GameObject.Instantiate(drugA, this.gameObject.transform.position, transform.rotation);
+        GameObject temp = GameObject.Instantiate(drugA, player.transform.position, transform.rotation);
         closeWindow();
     }
 
     public void drug_2()
     {
-        GameObject temp = GameObject.Instantiate(drugB, this.gameObject.transform.position, transform.rotation);
+        GameObject temp = GameObject.Instantiate(drugB, player.transform.position, transform.rotation);
         closeWindow();
 
     }
 
     public void drug_3()
     {
-        GameObject temp = GameObject.Instantiate(drugC, this.gameObject.transform.position, transform.rotation);
+        GameObject temp = GameObject.Instantiate(drugC, player.transform.position, transform.rotation);
         closeWindow();
     }
 
     public void closeWindow()
     {
-        Destroy(gameObject);
+        Time.timeScale = 1f;
+        levelUpScreen.SetActive(false);
     }
 }

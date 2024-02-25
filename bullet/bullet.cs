@@ -22,6 +22,14 @@ public class bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (p == null)
+        {
+            Time.timeScale = 0; 
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
         myRig.velocity = rot * speed;
         if (Math.Abs((p.gameObject.transform.position - gameObject.transform.position).magnitude) > p.range)
         {

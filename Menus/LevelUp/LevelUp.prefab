@@ -366,6 +366,7 @@ MonoBehaviour:
   drugA: {fileID: 4190065976328392276, guid: 36c56b3abcc83184cb29e8afb43086bb, type: 3}
   drugB: {fileID: 702210908109901941, guid: 616e16049f3b96544a690530583d04f5, type: 3}
   drugC: {fileID: 6200364036169221230, guid: 0802f1a1adf02614f8f57d921355f935, type: 3}
+  levelUpScreen: {fileID: 3565888269013029516}
 --- !u!1 &3921254456987237312
 GameObject:
   m_ObjectHideFlags: 0

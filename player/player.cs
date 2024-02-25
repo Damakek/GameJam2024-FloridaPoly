@@ -39,6 +39,9 @@ public class player : MonoBehaviour
     public TextMeshProUGUI moveText;
     public TextMeshProUGUI levelText;
 
+    public GameObject loseScreen;
+    public GameObject levelUpScreen;
+
     public int amount;
 
     Rigidbody myRig;
@@ -104,7 +107,7 @@ public class player : MonoBehaviour
     }
 
     public IEnumerator Shoot() {
-        if (shooting && shootDirection.magnitude != 0) {
+        if (shooting && shootDirection.magnitude != 0 && hp > 0) {
             //spawn bullet here
             Instantiate(bullet, transform.position, Quaternion.identity);
         }
@@ -116,7 +119,6 @@ public class player : MonoBehaviour
     {
         if (other.gameObject.tag == "enemy")
         {
-            Debug.Log("Hit by an enemy!");
             hp -= amount;
             hpText.text = "HP: " + hp;
             if (hp <= 0)
@@ -188,11 +190,14 @@ public class player : MonoBehaviour
 
     public void die() {
         //lmao freal???
-        Debug.Log("Player has died!");
-        Destroy(gameObject);
+        if(loseScreen != null)
+        loseScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void levelUp() {
+        levelUpScreen.SetActive(true);
+        Time.timeScale = 0;
         level++;
         levelText.text = "LEVEL " + level;
         exp -= (int)expThreshold;
