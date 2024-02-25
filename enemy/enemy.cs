@@ -25,7 +25,6 @@ public class enemy : MonoBehaviour
         attack = (int)(Time.timeSinceLevelLoad/10) + 2;
         //hp = (int)(Time.timeSinceLevelLoad / 20) + 1;
         hp = Random.Range(1, 6);
-        Debug.Log(attack);
         player = GameObject.FindGameObjectWithTag("Player");   
         p = player.GetComponent<player>();
         myRig = GetComponent<Rigidbody>();

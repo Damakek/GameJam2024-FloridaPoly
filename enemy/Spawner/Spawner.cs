@@ -36,11 +36,7 @@ public class Spawner : MonoBehaviour
         {
             spawnRate = 1 / ((Time.timeSinceLevelLoad * 0.001f) + 1f);
 
-            //Debug.Log("I have entered the coroutine");
-
             yield return new WaitForSeconds(spawnRate);
-
-            //Debug.Log("I am about to spawn a thing");
 
             Instantiate(enemyP, this.transform.position, transform.rotation);
         }
