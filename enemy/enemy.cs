@@ -17,6 +17,9 @@ public class enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        attack = (int)(Time.timeSinceLevelLoad/10) + 2;
+        hp = (int)(Time.timeSinceLevelLoad / 20) + 1;
+        Debug.Log(attack);
         player = GameObject.FindGameObjectWithTag("Player");   
         p = player.GetComponent<player>();
         myRig = GetComponent<Rigidbody>();

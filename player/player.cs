@@ -204,7 +204,7 @@ public class player : MonoBehaviour
         level++;
         levelText.text = "LEVEL " + level;
         exp -= (int)expThreshold;
-        expThreshold *= 1.2;
+        expThreshold *= 1.5;
     }
 
     public void defeatEnemy(int amount) {
